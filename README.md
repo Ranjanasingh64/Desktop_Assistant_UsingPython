@@ -1,4 +1,10 @@
 # Desktop_Assistant_UsingPython
+#### Requirements:
+## 1. Voice Recognition
+## 2. Speech to text
+## 3. wikipedia
+## 4. Web browser
+## 5. Text to speech
 
 ## How to run
 
