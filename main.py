@@ -51,4 +51,5 @@ def takeCommand():
         return query
 text = takeCommand()
 speak(text)
+print("test")
 
