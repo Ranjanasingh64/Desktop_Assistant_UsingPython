@@ -49,7 +49,33 @@ def takeCommand():
             print("Say that again please......")
             return "None"
         return query
-text = takeCommand()
-speak(text)
-print("test")
+#text = takeCommand()
+#speak(text)
 
+## after writing below statement the python will start reading from this lone only
+
+if __name__ == "__main__":
+    query = takeCommand().lower()
+    print(query)
+
+    if "wikipedia" in query:
+        speak("Searching wikipedia")
+        query = query.replace("wikipedia", "")
+        results = wikipedia.summary(query, sentences = 2)
+        speak("According to wikipedia")
+        print(results)
+        speak(results)
+
+    elif "youtube" in query:
+        speak("Opening Youtube")
+        webbrowser.open("youtube.com")
+
+    elif "google" in query:
+        speak("Opening Google")
+        webbrowser.open("google.com")        
+
+
+    elif "github" in query:
+        speak("Opening Github")
+        webbrowser.open("github.com")  
+    
