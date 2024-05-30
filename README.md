@@ -10,7 +10,7 @@
 
 1. Create a new virtual environment
 ```bash
-conda create -n assistant1 python=3.8
+conda create -n assistant2 python=3.10
 ```
 2. Check out the new created virtual environment
 ```bash
@@ -26,6 +26,14 @@ conda activate assistant1
 ```bash
 pip install -r requirements.txt
 ````
+
+
+5. Launch GUI on Localhost using streamlit
+```bash
+
+streamlit run app.py
+````
+
 ## Required Git Commands
 
 ```bash

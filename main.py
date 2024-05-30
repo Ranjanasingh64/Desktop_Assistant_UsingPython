@@ -49,33 +49,75 @@ def takeCommand():
             print("Say that again please......")
             return "None"
         return query
+    
+
+
+
+    
 #text = takeCommand()
 #speak(text)
+#The function for wish me by using time
+def wish_me():
+    hour = (datetime.datetime.now().hour)
+    if hour>=0 and hour<12:
+        speak("Good Morning Sir. How are you doing")
 
-## after writing below statement the python will start reading from this lone only
+    elif hour>=12 and hour<18:
+        speak("Good Afternoon Sir. How are you doing")
+
+    else:
+        speak("Good Evening Sir. How are you doing")   
+
+    speak ("I am JARVIS. Tell me sir how can I help you")     
+
+
+
+## after writing below statement the python will start reading from this line only
 
 if __name__ == "__main__":
-    query = takeCommand().lower()
-    print(query)
+    wish_me()
+    
+    while True:
 
-    if "wikipedia" in query:
-        speak("Searching wikipedia")
-        query = query.replace("wikipedia", "")
-        results = wikipedia.summary(query, sentences = 2)
-        speak("According to wikipedia")
-        print(results)
-        speak(results)
+        query = takeCommand().lower()
+        #print(query)
 
-    elif "youtube" in query:
-        speak("Opening Youtube")
-        webbrowser.open("youtube.com")
+        if "wikipedia" in query:
+            speak("Searching wikipedia")
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences = 2)
+            speak("According to wikipedia")
+            print(results)
+            speak(results)
 
-    elif "google" in query:
-        speak("Opening Google")
-        webbrowser.open("google.com")        
+        elif "youtube" in query:
+            speak("Opening Youtube")
+            webbrowser.open("youtube.com")
+
+        
+        elif "google" in query:
+            speak("Opening Google")
+            webbrowser.open("google.com")        
 
 
-    elif "github" in query:
-        speak("Opening Github")
-        webbrowser.open("github.com")  
+        elif "github" in query:
+            speak("Opening Github")
+            webbrowser.open("github.com")  
+
+    
+    ## This quey is for say the time
+        elif "time" in query:
+            strTime= datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Sir the time is {strTime}")
+        
+        elif "goodbye" in query:
+        #elif "Goodbye" in query:
+            speak("OK Sir. I am always here for you. Bye Bye")
+            exit()
+
+
+
+
+    
+
     
