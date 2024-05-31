@@ -25,7 +25,7 @@ def voice_input():
 
 def text_to_speech(text):
     # Create a gTTs object
-    tts = gTTs(text=text, lang='en') # Language can be changed
+    tts = gTTS(text=text, lang='en') # Language can be changed
 
     # save the audio as an MP3 file
     tts.save("speech.mp3")  
@@ -35,10 +35,10 @@ def llm_model_object(user_text):
 
 
 
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel('gemini-pro')
 
     response = model.generate_content(user_text)
 
-    result = response.txt
+    result = response.text
 
     return result
